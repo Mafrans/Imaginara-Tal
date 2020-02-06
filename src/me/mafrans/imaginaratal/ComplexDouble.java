@@ -57,4 +57,26 @@ public class ComplexDouble {
     public double getImaginary() {
         return imaginary;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        ComplexDouble that = (ComplexDouble) o;
+
+        if (Double.compare(that.getReal(), getReal()) != 0) return false;
+        return Double.compare(that.getImaginary(), getImaginary()) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        int result;
+        long temp;
+        temp = Double.doubleToLongBits(getReal());
+        result = (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(getImaginary());
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        return result;
+    }
 }
