@@ -46,8 +46,8 @@ public class ComplexDouble {
         return new ComplexDouble(real, imaginary);
     }
 
-    public ComplexDouble arg() {
-        throw new UnsupportedOperationException("Not Implemented Yet");
+    public double arg() {
+        return Math.atan2(getReal(), getImaginary());
     }
 
     public double getReal() {

@@ -9,10 +9,9 @@ public class Main {
         ComplexDouble b = new ComplexDouble(4, 1);
         ComplexDouble c = ComplexDouble.add(a, b);
         ComplexDouble d = ComplexDouble.mult(a, b);
+        double e = a.arg();
 
-
-
-        printlns(a, b, c, d);
+        printlns(a, b, c, d, e);
     }
 
     public static void printlns(Object... objs) {
