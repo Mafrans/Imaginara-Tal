@@ -47,6 +47,7 @@ public class ComplexDouble {
     }
 
     public double arg() {
+        if(getImaginary() == 0) throw new ArithmeticException("Cannot divide by zero");
         return Math.atan2(getReal(), getImaginary());
     }
 
